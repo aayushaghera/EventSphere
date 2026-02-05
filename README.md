@@ -4,10 +4,6 @@
 
 A comprehensive event management and ticketing platform built with **Node.js**, **React**, and **PostgreSQL**. This platform enables event organizers to create and manage events, venue owners to list their spaces, and attendees to discover and book tickets for amazing events.
 
-## 📹 Video Demo
-
-🎬 **[Watch Full Platform Demo](https://drive.google.com/file/d/1fqwfeY_LzJrr5Khgq3XCHI4TzVQma8QX/view?usp=sharing)**
-
 Experience the complete walkthrough of our Event Management Platform, showcasing all key features including user registration, event creation, ticket booking, venue management, and analytics dashboard.
 
 ## 🌟 Features
