@@ -1,0 +1,21 @@
+CREATE TABLE venues (
+    id SERIAL PRIMARY KEY,
+    owner_id INT NOT NULL,
+    venue_name VARCHAR(200) NOT NULL,
+    address TEXT NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    state VARCHAR(100) NOT NULL,
+    pincode VARCHAR(10),
+    venue_type VARCHAR(30) NOT NULL,
+    capacity INT NOT NULL,
+    hourly_rate DECIMAL(10,2) NOT NULL,
+    facilities JSON,
+    description TEXT,
+    contact_person VARCHAR(100),
+    contact_phone VARCHAR(15),
+    latitude DECIMAL(10,8),
+    longitude DECIMAL(11,8),
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (owner_id) REFERENCES users(id)
+);

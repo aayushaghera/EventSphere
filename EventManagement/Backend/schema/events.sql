@@ -1,0 +1,23 @@
+CREATE TABLE events (
+    id SERIAL PRIMARY KEY,
+    organizer_id INT NOT NULL,
+    venue_id INT NOT NULL,
+    event_title VARCHAR(200) NOT NULL,
+    event_category VARCHAR(30) NOT NULL,
+    description TEXT NOT NULL,
+    start_datetime TIMESTAMP NOT NULL,
+    end_datetime TIMESTAMP NOT NULL,
+    event_type VARCHAR(20) DEFAULT 'public',
+    event_capacity INT NOT NULL,
+    age_restriction VARCHAR(20) DEFAULT 'all_ages',
+    registration_start_date TIMESTAMP,
+    registration_end_date TIMESTAMP,
+    event_status VARCHAR(20) DEFAULT 'draft',
+    banner_image_url VARCHAR(255),
+    total_tickets_sold INT DEFAULT 0,
+    total_revenue DECIMAL(12,2) DEFAULT 0.00,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (organizer_id) REFERENCES event_organizers(id),
+    FOREIGN KEY (venue_id) REFERENCES venues(id)
+);

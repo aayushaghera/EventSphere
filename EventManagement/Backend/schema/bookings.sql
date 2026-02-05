@@ -1,0 +1,20 @@
+CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    booking_id VARCHAR(20) UNIQUE NOT NULL,
+    event_id INT NOT NULL,
+    attendee_id INT NOT NULL,
+    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total_tickets INT NOT NULL,
+    subtotal_amount DECIMAL(10,2) NOT NULL,
+    discount_amount DECIMAL(8,2) DEFAULT 0.00,
+    tax_amount DECIMAL(8,2) NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    booking_status VARCHAR(20) DEFAULT 'pending',
+    payment_status VARCHAR(20) DEFAULT 'pending',
+    payment_method VARCHAR(50),
+    transaction_id VARCHAR(100),
+    discount_code VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (event_id) REFERENCES events(id),
+    FOREIGN KEY (attendee_id) REFERENCES attendees(id)
+);
